@@ -1,0 +1,13 @@
+@import "../../style.scss";
+
+
+.loader {
+  @include themify($themes) {
+  min-height: 100vh;
+  width: 100%;
+  background-color: themed('bgSoft');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}

@@ -1,0 +1,94 @@
+@import "../../style.scss";
+
+.rightbar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed('bgSoft');
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .container {
+      .item {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        background-color: themed('bg');
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        span {
+          font-size: 14px;
+          color: themed('textColor');
+        }
+        .user {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px;
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 0;
+              left: 22px;
+            }
+            img {
+              width: 30px;
+              height: 30px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+            span {
+              font-weight: 500;
+              color: themed('textColor');
+            }
+            p {
+              font-size: 12px;
+              color: themed('textColorSoft');
+            }
+          }
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              border-radius: 5px;
+              padding: 5px;
+              color: #fff;
+              cursor: pointer;
+
+              &:first-child {
+                background-color: #5271ff;
+              }
+              &:last-child {
+                background-color: #f0544f;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
